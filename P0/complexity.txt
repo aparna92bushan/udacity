@@ -1,0 +1,44 @@
+0. Task0 Complexity:- 
+    For printing first record from the texts.csv file, it will take a constant  time i.e O(1)
+    For printing last record from calls.csv file, it will take a constant time O(1) as well.
+    This is because in both the cases, we have a list to work upon and we know the indices which
+    we want to access, and accessing a list at an index has a constant time complexity i.e O(1)
+
+    so Time complexity worst case is O(1)
+
+1. Task1 complexity:-
+    We have two separate for loops which run over the length of list. As the text file size increases,
+    the list length increases and if we consider a max length of files to be 
+    n and r for texts.csv and calls.csv respectively, then 
+    the time complexity of the solution becomes 
+    O(n+r) + O(C) for remaining code lines , C- a constant
+
+    Overall complexity = O(n+r) ignoring small constant time "C"
+
+2. Task2 complexity:-
+    the first for loop takes O(n) worst case time complexity , next for loop takes O(n)
+    where n is the number of lines in file/ number of elements in list
+    
+    so overall timecomplexity = O(n)
+
+3. Task3 Complexity:
+    There are two for loops. The first one takes O(n) as worst case time where n is the length of the
+    list / number of lines in calls.csv.
+    Secnd for loop has worst case time of O(n) as it is looping over all the items of unique codes which in 
+    worst case can be equal to length of the list.
+
+    So overall time complexity = O(n) + O(n) ~ O(n)
+
+4. Task4 Complexity:
+    The line - [x[0] for x in texts ] + [x[1] for x in texts] has a time complexity of :- O(n+n)
+    since each sub part - [x[index] for x in texts ] will take O(n) as we have to loop over all the lines in
+    texts list with a length n.
+    likewise for all_call_numbers = [x[0] for x in calls ] + [x[1] for x in calls] 
+    callers_without_sms = set(all_call_numbers) - set(all_texts_numbers) will take O(n) + O(m) where
+    set(all_call_numbers) - has O(n)
+    set(all_texts_numbers) - has O(m) m - size of texts.csv
+    likewise other lines have O(n) worst case
+    But the line callers_wo_incoming.sort() has O(nlogn) timecomplexity since sort()
+    uses Timsort algorithm which has a worst case timecomplexity of O(nlog n)
+
+    so overall Time complexity is O(n) + O(nlogn)
